@@ -1274,7 +1274,9 @@ class TextClip(ImageClip):
             "-font",
             font,
         ]
-
+        cmd += ['-alpha','set']
+        cmd += ['-channel','A']
+        cmd += ['-evaluate','set','75%']
         if font_size is not None:
             cmd += ["-pointsize", "%d" % font_size]
         if kerning is not None:
